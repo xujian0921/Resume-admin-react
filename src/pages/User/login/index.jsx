@@ -4,7 +4,7 @@ import {
 } from '@ant-design/icons';
 import React from 'react';
 import ProForm, {  ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { useIntl, connect, FormattedMessage } from 'umi';
+import { useIntl, connect, FormattedMessage, history } from 'umi';
 import styles from './index.less';
 
 
@@ -103,7 +103,9 @@ const Login = (props) => {
         </div>
       </ProForm>
       <div className={styles.bottom}>
-        <a>
+        <a
+          onClick={()=> history.push('/user/register')}
+        >
           <FormattedMessage id="pages.login.registerAccount" />
         </a>
         <a>
